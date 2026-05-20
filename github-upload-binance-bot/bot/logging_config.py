@@ -1,0 +1,13 @@
+import os
+import logging
+
+def setup_logging():
+    os.makedirs("logs", exist_ok=True)
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s [%(levelname)s] %(message)s",
+        handlers=[
+            logging.FileHandler("logs/trading_bot.log"),
+            logging.StreamHandler()
+        ]
+    )
